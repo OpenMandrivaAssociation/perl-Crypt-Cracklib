@@ -7,7 +7,7 @@ Version:    %{version}
 Release:    %{release}
 License:    GPL or Artistic
 Group:      Development/Perl
-Summary:    Perl interface to Alec Muffett's Cracklib.
+Summary:    Perl interface to Alec Muffett's Cracklib
 Source:     http://www.cpan.org/modules/by-module/Crypt/%{realname}-%{version}.tar.gz
 Patch0:     Crypt-Cracklib.fix_path.patch
 Url:        http://search.cpan.org/dist/%{realname}
