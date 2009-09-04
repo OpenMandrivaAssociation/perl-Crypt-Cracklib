@@ -1,6 +1,6 @@
 %define realname   Crypt-Cracklib
 %define version    1.4
-%define release    %mkrel 1
+%define release    %mkrel 2
 
 Name:       perl-%{realname}
 Version:    %{version}
