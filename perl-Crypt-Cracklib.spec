@@ -1,29 +1,30 @@
-%define realname   Crypt-Cracklib
-%define version    1.4
-%define release    %mkrel 3
+%define upstream_name    Crypt-Cracklib
+%define upstream_version 1.5
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    Perl interface to Alec Muffett's Cracklib
-Source:     http://www.cpan.org/modules/by-module/Crypt/%{realname}-%{version}.tar.gz
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:     Crypt-Cracklib.fix_path.patch
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+
+BuildRequires: libcrack-devel
 BuildRequires: perl(Pod::Coverage)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Test::Pod::Coverage)
-BuildRequires: libcrack-devel
+BuildRequires: perl-devel
 
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This is a simple interface to the cracklib library.
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 %patch0 -p0 -b .path
 
 %build
@@ -31,7 +32,7 @@ This is a simple interface to the cracklib library.
 %make
 
 %check
-make test
+%make test
 
 %install
 rm -rf %buildroot
@@ -45,4 +46,3 @@ rm -rf %buildroot
 %doc Changes README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
