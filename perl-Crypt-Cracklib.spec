@@ -1,5 +1,5 @@
 %define upstream_name    Crypt-Cracklib
-%define upstream_version 1.5
+%define upstream_version 1.6
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -10,8 +10,7 @@ License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.gz
-Patch0:     Crypt-Cracklib.fix_path.patch
-
+Patch0:     Crypt-Cracklib-1.6-fix-path.patch
 BuildRequires: libcrack-devel
 BuildRequires: perl(Pod::Coverage)
 BuildRequires: perl(Test::More)
@@ -25,7 +24,7 @@ This is a simple interface to the cracklib library.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
-%patch0 -p0 -b .path
+%patch0 -p 1
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
