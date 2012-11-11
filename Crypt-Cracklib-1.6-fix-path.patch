@@ -1,0 +1,11 @@
+diff -Naur -x '*.orig' -x '*.rej' -x '*~' Crypt-Cracklib-1.6/Cracklib.pm Crypt-Cracklib-1.6-fix-path//Cracklib.pm
+--- Crypt-Cracklib-1.6/Cracklib.pm	2010-12-24 23:32:36.000000000 +0000
++++ Crypt-Cracklib-1.6-fix-path//Cracklib.pm	2010-12-27 11:08:19.000000000 +0000
+@@ -15,6 +15,7 @@
+ {
+   for my $path (qw(
+     /usr/share/pw_dict
++    /usr/share/cracklib/pw_dict
+     /var/cache/cracklib/cracklib_dict
+     /usr/lib/cracklib_dict
+     /usr/lib64/cracklib_dict
