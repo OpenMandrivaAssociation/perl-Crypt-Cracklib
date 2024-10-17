@@ -8,7 +8,7 @@ Release:	5
 Summary:    Perl interface to Alec Muffett's Cracklib
 License:    GPL+ or Artistic
 Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
+Url:        https://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:     Crypt-Cracklib-1.6-fix-path.patch
 BuildRequires: libcrack-devel
