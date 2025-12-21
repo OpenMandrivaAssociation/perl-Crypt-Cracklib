@@ -11,6 +11,7 @@ Group:      Development/Perl
 Url:        https://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:     Crypt-Cracklib-1.6-fix-path.patch
+BuildRequires:	make
 BuildRequires: libcrack-devel
 BuildRequires: perl(Pod::Coverage)
 BuildRequires: perl(Test::More)
