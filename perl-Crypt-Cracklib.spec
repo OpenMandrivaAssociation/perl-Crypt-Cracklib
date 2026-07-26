@@ -1,15 +1,13 @@
 %define upstream_name    Crypt-Cracklib
-%define upstream_version 1.7
-
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:	5
+Version:    1.7
+Release:	6
 
 Summary:    Perl interface to Alec Muffett's Cracklib
 License:    GPL+ or Artistic
 Group:      Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.gz
+Url:        https://metacpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Crypt/%{upstream_name}-%{version}.tar.gz
 Patch0:     Crypt-Cracklib-1.6-fix-path.patch
 BuildRequires:	make
 BuildRequires: libcrack-devel
@@ -24,7 +22,7 @@ BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 This is a simple interface to the cracklib library.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 %patch0 -p 1
 
 %build
